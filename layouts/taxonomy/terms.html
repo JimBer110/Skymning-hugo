@@ -1,0 +1,9 @@
+{{ define "main" }}
+
+<h1>{{ .Data.Plural | title }}</h1>
+
+<ul class="taxonomy">
+{{ range $term := .Data.Terms }}<li><a href="{{ $term.Page.RelPermalink }}">{{ $term.Page.LinkTitle}}</a></li>{{ end }}
+</ul>
+
+{{ end }}

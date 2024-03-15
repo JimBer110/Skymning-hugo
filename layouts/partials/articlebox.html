@@ -1,0 +1,16 @@
+<article class="list">
+  <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+  <small><i class="bi-calendar"> </i>{{ .Date.Format "Mon, 2006-01-02 15:04" }}</small><br>
+  {{ if .GetTerms "categories" }}
+  <ul class="taxonomy"><i class="bi-bookmark"></i>
+  {{ range .GetTerms "categories" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+  {{ if .GetTerms "tags" }}
+  <ul class="taxonomy"><i class="bi-tag"></i>
+  {{ range .GetTerms "tags" }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+  {{ .Summary }}
+</article>
+

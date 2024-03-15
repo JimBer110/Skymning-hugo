@@ -1,0 +1,19 @@
+name = 'Skymning'
+license = 'MIT'
+licenselink = 'https://github.com/JimBer110/Skymning-hugo/LICENSE'
+description = 'A darkblue theme for your built for personal blogs.'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/JimBer110/Skymning-hugo'
+
+# If you have a running demo of the theme
+demosite = 'https://jimmy-b.se'
+
+# Taxonomy terms
+tags = ['blog', 'portfolio']
+features = ['rss', 'pagination', 'taxonomy']
+
+# If the theme has a single author
+[author]
+  name = 'Jimmy Berglund'
+  homepage = 'https://jimmy-b.se'

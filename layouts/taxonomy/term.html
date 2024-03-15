@@ -1,0 +1,13 @@
+{{ define "head" }}
+{{ with .OutputFormats.Get "rss" -}}
+  {{ $rssTitle := print site.Title " | " page.Title }}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink $rssTitle | safeHTML }}
+{{ end }}
+{{ end }}
+{{ define "main" }}
+<h1 style="display: inline-block;">{{ .Data.Singular | title }}: {{ .Title }}</h2><a href="{{ with .OutputFormats.Get "rss" }}{{ .Permalink }}{{ end }}"><i class="bi-rss" style="font-size: 2em;"></i></a>
+  {{ range .Paginator.Pages }}
+    {{ partial "articlebox.html" . }}
+  {{ end }}
+{{ template "_internal/pagination.html" . }}
+{{ end }}
